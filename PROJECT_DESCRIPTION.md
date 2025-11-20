@@ -1,6 +1,6 @@
 # Project Description
 
-**Deployed Frontend URL:** _Will be added after Vercel deployment_  
+**Deployed Frontend URL:** https://1frontend-indol.vercel.app
 **Solana Program ID:** `9ZEfZ88ge79GvKJDfj7mdsY7J37tqinWbVbqv7zzdMfv`
 
 ---

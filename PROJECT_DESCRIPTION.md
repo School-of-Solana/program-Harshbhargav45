@@ -1,79 +1,75 @@
 # Project Description
 
-**Deployed Frontend URL:** [TODO: Link to your deployed frontend]
+**Deployed Frontend URL:** _Will be added after Vercel deployment_  
+**Solana Program ID:** `9ZEfZ88ge79GvKJDfj7mdsY7J37tqinWbVbqv7zzdMfv`
 
-**Solana Program ID:** [TODO: Your deployed program's public key]
+---
 
-## Project Overview
+## 📌 Project Overview
 
-### Description
-[TODO: Provide a comprehensive description of your dApp. Explain what it does. Be detailed about the core functionality.]
+### 📝 Description
 
-### Key Features
-[TODO: List the main features of your dApp. Be specific about what users can do.]
+The **Solana Tipjar dApp** allows users to collect SOL tips using a secure, wallet-bound, decentralized tipping system built with **Anchor**.  
+Each wallet can:
 
-- Feature 1: [Description]
-- Feature 2: [Description]
-- ...
-  
-### How to Use the dApp
-[TODO: Provide step-by-step instructions for users to interact with your dApp]
+- Create a **Tip Account PDA**
+- Receive SOL tips from anyone
+- Withdraw collected SOL securely
+- Track total amount tipped
 
-1. **Connect Wallet**
-2. **Main Action 1:** [Step-by-step instructions]
-3. **Main Action 2:** [Step-by-step instructions]
-4. ...
+This dApp showcases practical Solana development concepts including Program Derived Addresses (PDAs), account ownership, and on-chain lamport management.
 
-## Program Architecture
-[TODO: Describe your Solana program's architecture. Explain the main instructions, account structures, and data flow.]
+---
 
-### PDA Usage
-[TODO: Explain how you implemented Program Derived Addresses (PDAs) in your project. What seeds do you use and why?]
+### ⭐ Key Features
 
-**PDAs Used:**
-- PDA 1: [Purpose and description]
-- PDA 2: [Purpose and description]
+- **Initialize Tip Jar** (Creates PDA linked to your wallet)
+- **Send Tips in SOL** (Anyone can tip your address)
+- **Withdraw Tips Securely** (Only PDA owner can withdraw)
+- **View Total Tipped Amount** (Fetched from on-chain state)
 
-### Program Instructions
-[TODO: List and describe all the instructions in your Solana program]
+---
 
-**Instructions Implemented:**
-- Instruction 1: [Description of what it does]
-- Instruction 2: [Description of what it does]
-- ...
+### 🚀 How to Use the dApp
 
-### Account Structure
-[TODO: Describe your main account structures and their purposes]
+1. **Connect your wallet** (Phantom recommended)
+2. Click **“Initialize Tip Jar”**
+3. Share your wallet address to receive tips
+4. Use **“Send Tip”** to tip others
+5. Use **“Withdraw”** to withdraw your collected tips
+
+---
+
+## 🏗 Program Architecture
+
+### 🔐 PDA Logic
+
+Each user gets a unique Tip Account PDA based on:
+
+This guarantees:
+
+- Only 1 tip jar per wallet
+- Tamper-proof ownership
+- Secure withdrawals
+
+---
+
+### 📦 Instructions Overview
+
+| Instruction            | Purpose                                           |
+| ---------------------- | ------------------------------------------------- |
+| `initialize_recipient` | Creates PDA tip jar for the wallet                |
+| `tip`                  | Sends SOL to another user’s PDA                   |
+| `withdraw`             | Allows only the owner to withdraw the PDA balance |
+
+---
+
+### 📂 Account Structure
 
 ```rust
-// Example account structure (replace with your actual structs)
 #[account]
-pub struct YourAccountName {
-    // Describe each field
+pub struct TipAccount {
+    pub owner: Pubkey,        // The owner who receives tips
+    pub total_tipped: u64,    // Total lamports collected
 }
 ```
-
-## Testing
-
-### Test Coverage
-[TODO: Describe your testing approach and what scenarios you covered]
-
-**Happy Path Tests:**
-- Test 1: [Description]
-- Test 2: [Description]
-- ...
-
-**Unhappy Path Tests:**
-- Test 1: [Description of error scenario]
-- Test 2: [Description of error scenario]
-- ...
-
-### Running Tests
-```bash
-# Commands to run your tests
-anchor test
-```
-
-### Additional Notes for Evaluators
-
-[TODO: Add any specific notes or context that would help evaluators understand your project better]

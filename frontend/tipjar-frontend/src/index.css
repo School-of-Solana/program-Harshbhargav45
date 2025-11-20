@@ -1,0 +1,107 @@
+/* 🌙 Smooth Reset + Dark Modern Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🧱 Layout */
+.app-container {
+  text-align: center;
+  width: 90%;
+  max-width: 650px;
+  padding: 30px;
+}
+
+/* 🎉 Title */
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+/* 💳 Card Box */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 20px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* 🎛 Button Group */
+.btn-group {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* 🎨 Buttons */
+button {
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.25s ease;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #1e40af;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* 💰 Balance Display */
+.balance {
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* 👛 Phantom Wallet Button Style Fix */
+.wallet-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.wallet-adapter-button {
+  background-color: #14f195 !important;
+  border-radius: 12px !important;
+  color: #092c18 !important;
+  font-weight: 700;
+  padding: 8px 16px !important;
+}
+
+.wallet-adapter-button:hover {
+  filter: brightness(1.1);
+}

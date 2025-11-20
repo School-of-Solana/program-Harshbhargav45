@@ -1,0 +1,20 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+tipjar = "9ZEfZ88ge79GvKJDfj7mdsY7J37tqinWbVbqv7zzdMfv"
+
+[registry]
+url = "https://api.apr.dev"
+
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "anchor test"
